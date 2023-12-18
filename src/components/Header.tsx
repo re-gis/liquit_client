@@ -1,4 +1,3 @@
-import Battery5BarIcon from "@mui/icons-material/Battery5Bar";
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import PlayCircleFilledOutlinedIcon from "@mui/icons-material/PlayCircleFilledOutlined";
@@ -7,8 +6,8 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <div className="flex flex-row  items-center justify-between  p-2">
-      <div className="flex flex-row">
-        <Battery5BarIcon sx={{ color: "green" }} />
+      <div className="flex flex-row gap-2">
+       <img src="/images/battery.png" alt="" className="h=[18px] w-[28px]" />
         <div>
           <p>
             {" "}
@@ -23,10 +22,10 @@ const Header: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row  gap-3 items-center  justify-center">
+      <div className="flex flex-row  gap-12 items-center  justify-center">
         <div className="flex">
           <div className="flex flex-row  items-center">
-            <img src="/images/loan.png" alt=" loan" />
+            <img src="/images/loan.png" alt=" loan"   className="w-[28px] h-[28px]"/>
             <div>
               <p className="text-white">LOAN</p>
               <p className="text-xs">$0.00001</p>
@@ -36,7 +35,7 @@ const Header: React.FC = () => {
         </div>
         <div className="flex">
           <div className="flex flex-row  items-center">
-            <img src="/images/usdl.png" alt=" loan" />
+            <img src="/images/usdl.png" alt=" loan"  className="w-[28px] h-[28px]"/>
             <div>
               <p className="text-white">USDL</p>
               <p className="text-xs">$1.230401</p>
@@ -47,7 +46,7 @@ const Header: React.FC = () => {
 
         <div className="flex">
           <div className="flex flex-row  items-center">
-            <img src="/images/PLs.png" alt=" loan" />
+            <img src="/images/PLs.png" alt=" loan"   className="w-[28px] h-[28px]"/>
             <div>
               <p className="text-white">PLS</p>
               <p className="text-xs">$0.00001</p>
