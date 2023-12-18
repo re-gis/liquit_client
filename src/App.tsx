@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import SideBar from "./components/SideBar";
 import Header from "./components/Header";
+import Stalking from "./Stalking/Stalking";
 
 const App: React.FC = () => {
   return (
@@ -10,15 +11,15 @@ const App: React.FC = () => {
         <div className="w-[15%]  p-5">
           <SideBar />
         </div>
-        <div>
-          <div className="fixed">
+        <div className="w-full">
+          <div className="">
             <Header />
           </div>
           <Routes>
             <Route path="/" />
             <Route path="/borrow" />
             <Route path="/stability" />
-            <Route path="/staking" />
+            <Route path="/staking" element={<Stalking/>} />
             <Route path="/lp" />
             <Route path="/redemptions" />
             <Route path="/liquidations" />

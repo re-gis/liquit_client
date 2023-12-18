@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 body {
   --theme-ui-colors-primary: #762fc1;
   --theme-ui-colors-secondary: #3e334b;
