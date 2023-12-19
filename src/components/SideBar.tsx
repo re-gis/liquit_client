@@ -14,7 +14,7 @@ import bor from "../assets/bopng.png";
 
 const SideBar: React.FC = () => {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12 bg-black h-full p-5 ">
       <div className="w-[100%]">
         <img src={logo} className="h-[35px]" alt="" />
       </div>

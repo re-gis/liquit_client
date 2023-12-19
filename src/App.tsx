@@ -7,8 +7,8 @@ import Stalking from "./Stalking/Stalking";
 const App: React.FC = () => {
   return (
     <>
-      <div className="flex h-[100%]">
-        <div className="w-[15%]  p-5">
+      <div className="flex h-[100%] main">
+        <div className="w-[15%]   ">
           <SideBar />
         </div>
         <div className="w-full">

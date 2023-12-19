@@ -11,12 +11,26 @@ const Stalking = () => {
   const [isHoveredLoan, setIsHoveredLoan] = useState(false);
   const [isHoveredStaking, setIsHoveredStaking] = useState(false);
   const [isHoveredSupply, setIsHoveredSupply] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const [loan, setLoan] = useState("0.00");
   const shadowStyle = {
     boxShadow: "0px 0px 12px 0px rgba(118, 47, 193, 0.7)",
     // Add other styles as needed
   };
+  const shadowStyle1 = {
+    boxShadow: isActive ? "0px 0px 12px 0px rgba(118, 47, 193, 0.7)" : " none",
+    // Add other styles as needed
+  };
+
+  const handleInputFocus = () => {
+    setIsActive(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsActive(false);
+  };
+
   const handleStake = () => {
     setStake(true);
   };
@@ -64,7 +78,6 @@ const Stalking = () => {
     setIsHoveredStability(false);
   };
 
-
   const handleHoveredLoan = () => {
     setIsHoveredLoan(true);
   };
@@ -72,14 +85,12 @@ const Stalking = () => {
     setIsHoveredLoan(false);
   };
 
-
   const handleHoveredStaking = () => {
     setIsHoveredStaking(true);
   };
   const handleUnHoveredStaking = () => {
     setIsHoveredStaking(false);
   };
-
 
   const handleHoveredSupply = () => {
     setIsHoveredSupply(true);
@@ -109,14 +120,14 @@ const Stalking = () => {
                 <button
                   className={` ${
                     stake ? "bg-[#2e2834]" : ""
-                  } text-white py-3 px-12 rounded-lg`}
+                  } text-gray-500 hover:text-white py-3 px-12 rounded-lg`}
                   onClick={handleStake}
                 >
                   Stake
                 </button>
                 <button
-                  className={` text-white py-3 px-12 rounded-lg ${
-                    stake ? "" : "bg-[#2e2834]"
+                  className={`  hover:text-white py-3 px-12 rounded-lg ${
+                    stake ? "text-gray-500" : "bg-[#2e2834] text-white"
                   }`}
                   onClick={handleUnstake}
                 >
@@ -133,6 +144,9 @@ const Stalking = () => {
                   placeholder="0.00"
                   className="bg-[#100d14] border border-[#3e334b]  rounded-lg hover:outline-none text-right placeholder:text-right px-2 py-4 w-full"
                   onChange={handleOnChange}
+                  onFocus={handleInputFocus}
+                  onBlur={handleInputBlur}
+                  style={shadowStyle1}
                 />
                 <div className="flex flex-row absolute top-5 text-xs left-2">
                   <p>STAKE LOAN</p>
@@ -153,10 +167,10 @@ const Stalking = () => {
                   75%
                 </button>
                 <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
-                  100%
+                  100%#3e334b
                 </button>
               </div>
-              <button className="bg-[#762fc1] text-white p-3 rounded-md">
+              <button className="bg-[#762fc1] text-white p-3 rounded-md hover:bg-[#3e334b]">
                 Connect Your Wallet
               </button>
             </div>
@@ -209,7 +223,10 @@ const Stalking = () => {
                 </div>
               </div>
 
-              <button className="bg-[#762fc1] text-white p-3 rounded-md">
+              <button
+                className="bg-[#762fc1] text-white p-3 rounded-md opacity-60"
+                disabled
+              >
                 Claim
               </button>
             </div>
@@ -354,7 +371,7 @@ const Stalking = () => {
                   style={shadowStyle}
                   className="p-2 text-sm font-extralight absolute    rounded-md left-[52rem]  z-50 bg-[#16121a]"
                 >
-                  <p> The  total amount of LOAN tokens staked </p>
+                  <p> The total amount of LOAN tokens staked </p>
                   <p> in the Staking Pool .</p>
                 </div>
               ) : (
@@ -366,8 +383,8 @@ const Stalking = () => {
               <p className="text-sm">
                 <span>APR</span>{" "}
                 <span
-                       onMouseOver={handleHoveredStaking}
-                       onMouseOut={handleUnHoveredStaking}
+                  onMouseOver={handleHoveredStaking}
+                  onMouseOut={handleUnHoveredStaking}
                 >
                   <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
                 </span>
@@ -379,8 +396,8 @@ const Stalking = () => {
                   style={shadowStyle}
                   className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem]  z-50 bg-[#16121a]"
                 >
-                  <p>An estimate of the annual  returns of USDL  </p>
-                  <p> and PLS  paid to staked LOAN holders</p>
+                  <p>An estimate of the annual returns of USDL </p>
+                  <p> and PLS paid to staked LOAN holders</p>
                 </div>
               ) : (
                 ""
@@ -391,8 +408,8 @@ const Stalking = () => {
               <p className="text-sm">
                 <span>Supply</span>{" "}
                 <span
-                onMouseOver={handleHoveredSupply}
-                onMouseOut={handleUnHoveredSupply}
+                  onMouseOver={handleHoveredSupply}
+                  onMouseOut={handleUnHoveredSupply}
                 >
                   <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
                 </span>
@@ -416,6 +433,5 @@ const Stalking = () => {
     </div>
   );
 };
-
 
 export default Stalking;

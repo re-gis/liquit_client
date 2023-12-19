@@ -20,9 +20,9 @@ const Header: React.FC = () => {
   }
   
   return (
-    <div className="flex flex-row  items-center justify-between  p-2 relative">
+    <div className="flex flex-row  items-center justify-between  py-2 p-5 relative">
       <div className="flex flex-row gap-2">
-        <img src="/images/battery.png" alt="" className="h=[18px] w-[28px]" />
+        <img src="/images/battery.png" alt="" className="h=[14px] w-[20px]" />
         <div>
           <p>
             {" "}
