@@ -12,9 +12,9 @@ import stap from "../assets/stapng.png";
 import token from "../assets/tokens.png";
 import bor from "../assets/bopng.png";
 
-const SideBar: React.FC = () => {
+const SideBar: React.FC<openSideBarPropValue> = ({openSideBar}) => {
   return (
-    <div className="flex flex-col gap-12 bg-black h-full p-5 ">
+    <div className={` md:${openSideBar ?"flex z-50 w-full" :"hidden"} lg:flex flex-col gap-12 bg-black h-full p-5  `}>
       <div className="w-[100%]">
         <img src={logo} className="h-[35px]" alt="" />
       </div>

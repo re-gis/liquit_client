@@ -1,7 +1,7 @@
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
-import { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 
-const Stalking = () => {
+const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
   const [stake, setStake] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredPLS, setIsHoveredPLS] = useState(false);
@@ -101,32 +101,36 @@ const Stalking = () => {
 
   return (
     <div>
-      <div className="flex flex-col  justify-center mt-16 gap-16 pb-6">
-        <div className="flex flex-row  items-center   justify-center   gap-12">
-          <hr className="   border-[#3e334b] w-56" />
+      <div
+        className={`flex  md:${
+          openSideBar ? "z-0" : "z-50"
+        } flex-col  justify-center mt-16 gap-16 pb-6`}
+      >
+        <div className="flex flex-row  items-center   justify-center   lg:gap-12 md:gap-5">
+          <hr className="   border-[#3e334b] lg:w-56 md:w-28 " />
           <p className=" font-semibold text-3xl text-white ">
             Stake your LOAN token to earn USDL and PLS
           </p>
-          <hr className="h-2   w-56 border-[#3e334b]" />
+          <hr className="h-2   lg:w-56 md:w-28 border-[#3e334b]" />
         </div>
-        <div className="flex flex-row gap-24 items-center justify-center relative ">
-          <div className="flex flex-col gap-5  items-center">
+        <div className="flex flex-row lg:gap-24 md:gap-8 items-center justify-center relative ">
+          <div className="flex flex-col gap-5  items-center  flex-1 max-w-[500px]">
             <h1 className="text-2xl text-white font-semibold ">Stake LOAN</h1>
             <div
-              className="w-full border border-[#762fc1] rounded-lg   flex flex-col gap-16 p-4 bg-black"
+              className="w-[100%] border border-[#762fc1] rounded-lg   flex flex-col gap-16 p-4 bg-black"
               style={shadowStyle}
             >
-              <div className="flex flex-row gap-10">
+              <div className="flex flex-row lg:gap-10 md:gap-2 justify-between">
                 <button
                   className={` ${
                     stake ? "bg-[#2e2834]" : ""
-                  } text-gray-500 hover:text-white py-3 px-12 rounded-lg`}
+                  } text-gray-500 hover:text-white py-0 lg:px-8 md:px-5 rounded-lg`}
                   onClick={handleStake}
                 >
                   Stake
                 </button>
                 <button
-                  className={`  hover:text-white py-3 px-12 rounded-lg ${
+                  className={`  hover:text-white py-3 lg:px-12 md:px-5 rounded-lg ${
                     stake ? "text-gray-500" : "bg-[#2e2834] text-white"
                   }`}
                   onClick={handleUnstake}
@@ -142,7 +146,7 @@ const Stalking = () => {
                 <input
                   type="text"
                   placeholder="0.00"
-                  className="bg-[#100d14] border border-[#3e334b]  rounded-lg hover:outline-none text-right placeholder:text-right px-2 py-4 w-full"
+                  className="bg-[#100d14] border border-[#3e334b]  rounded-lg hover:outline-none text-right placeholder:text-right px-2 py-4 w-full "
                   onChange={handleOnChange}
                   onFocus={handleInputFocus}
                   onBlur={handleInputBlur}
@@ -157,17 +161,17 @@ const Stalking = () => {
                 </p>
               </div>
               <div className="flex flex-row gap-3 w-full justify-between items-center">
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1  lg:px-10 md:px-5">
                   25%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
                   50%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
                   75%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
-                  100%#3e334b
+                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
+                  100%
                 </button>
               </div>
               <button className="bg-[#762fc1] text-white p-3 rounded-md hover:bg-[#3e334b]">
@@ -175,7 +179,7 @@ const Stalking = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-col gap-5  items-center w-[30%] ">
+          <div className="flex flex-1 flex-col gap-5  items-center max-w-[500px] ">
             <h1 className="text-2xl text-white font-semibold ">Staking Pool</h1>
             <div className="w-full     flex flex-col gap-12 p-4">
               <div className="flex flex-col gap-5">
@@ -248,184 +252,232 @@ const Stalking = () => {
             Protocol Performance
           </h1>
 
-          <div className="flex flex-row gap-3 items-center  rounded-md  justify-center bg-[#111017] ml-16 p-2 mb-2 w-[80%]">
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Total Value</p>
-              <p className="text-sm">
-                <span>Locked</span>{" "}
-                <span
-                  onMouseOver={handleHoveredPLS}
-                  onMouseOut={handleUnHoveredPLS}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">717.18B PLS</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredPLS ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute   rounded-md left-[29rem]  z-50 bg-[#16121a]"
-                >
-                  <p> The total value of PLS locked as collateral </p>
-                  <p>in the system . Shown as total PLS and</p>
-                  <p>USD value.</p>
-                </div>
-              ) : (
-                ""
-              )}
+          <div className="flex w-full justify-center items-center">
+            <div className="flex flex-row gap-0 items-center  rounded-md  justify-center bg-[#111017]  p-2 mb-2 max-w-[1100px]">
+              <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Total Value</p>
+                <p className="text-sm">
+                  <span>Locked</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredPLS}
+                    onMouseOut={handleUnHoveredPLS}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">717.18B PLS</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredPLS ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute   rounded-md left-[29rem]  z-50 bg-[#16121a]"
+                  >
+                    <p> The total value of PLS locked as collateral </p>
+                    <p>in the system . Shown as total PLS and</p>
+                    <p>USD value.</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Total Collateral</p>
+                <p className="text-sm">
+                  <span>Ratio</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredRatio}
+                    onMouseOut={handleUnHoveredRatio}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">228.21%</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredRatio ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute   rounded-md left-[40rem]  z-50 bg-[#16121a]"
+                  >
+                    <p> The ration of the USD value of the entire </p>
+                    <p> system collateral divided by the entire</p>
+                    <p>system debt.</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Staked</p>
+                <p className="text-sm">
+                  <span>USDL</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredStake}
+                    onMouseOut={handleUnHoveredStake}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">13.58M</p>
+                <p className="text-white">(74.85%)</p>
+                {isHoveredStake ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute  bottom-10  rounded-md left-[40rem]  z-50 bg-[#16121a]"
+                  >
+                    <p> The amount of USDL currently held in the </p>
+                    <p> Stability Pool and percentage of the total</p>
+                    <p>amount in circulation</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Stability Pool</p>
+                <p className="text-sm">
+                  <span>APR</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredStability}
+                    onMouseOut={handleUnHoveredStability}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">265.13%</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredStability ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute    rounded-md left-[40rem]  z-50 bg-[#16121a]"
+                  >
+                    <p> An estimate of the LOAN token and PLS </p>
+                    <p> returns to Stability Pool participants . This</p>
+                    <p>includes PLS gains from liquidations.</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Staked</p>
+                <p className="text-sm">
+                  <span>LOAN</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredLoan}
+                    onMouseOut={handleUnHoveredLoan}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">354.17B</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredLoan ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute    rounded-md left-[52rem]  z-50 bg-[#16121a]"
+                  >
+                    <p> The total amount of LOAN tokens staked </p>
+                    <p> in the Staking Pool .</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
+                <p className="text-sm">Staking Pool</p>
+                <p className="text-sm">
+                  <span>APR</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredStaking}
+                    onMouseOut={handleUnHoveredStaking}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">64.70%</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredStaking ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem]  z-50 bg-[#16121a]"
+                  >
+                    <p>An estimate of the annual returns of USDL </p>
+                    <p> and PLS paid to staked LOAN holders</p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-1  px-4 mx-5">
+                <p className="text-sm">USDL</p>
+                <p className="text-sm">
+                  <span>Supply</span>{" "}
+                  <span
+                    onMouseOver={handleHoveredSupply}
+                    onMouseOut={handleUnHoveredSupply}
+                  >
+                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
+                  </span>
+                </p>
+                <p className="text-white">18.14M</p>
+                <p className="text-white">(41.41M USD)</p>
+                {isHoveredSupply ? (
+                  <div
+                    style={shadowStyle}
+                    className="p-2 text-sm font-extralight absolute    rounded-md right-[26rem] bottom-0  z-50 bg-[#16121a]"
+                  >
+                    <p>The total USDL minted by the system. </p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Total Collateral</p>
-              <p className="text-sm">
-                <span>Ratio</span>{" "}
-                <span
-                  onMouseOver={handleHoveredRatio}
-                  onMouseOut={handleUnHoveredRatio}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">228.21%</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredRatio ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute   rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                >
-                  <p> The ration of the USD value of the entire </p>
-                  <p> system collateral divided by the entire</p>
-                  <p>system debt.</p>
+          </div>
+
+          <div className="md:flex lg:hidden flex-row gap-24 items-center  rounded-md  justify-center bg-black   p-9 ml-16 mb-2 w-[80%]">
+            <div className="flex">
+              <div className="flex flex-row  items-center">
+                <img
+                  src="/images/loan.png"
+                  alt=" loan"
+                  className="w-[28px] h-[28px]"
+                />
+                <div>
+                  <p className="text-white">LOAN</p>
+                  <p className="text-xs">$0.00001</p>
                 </div>
-              ) : (
-                ""
-              )}
+              </div>
+              <span className="text-xs text-green-500"> 1.84%</span>
             </div>
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Staked</p>
-              <p className="text-sm">
-                <span>USDL</span>{" "}
-                <span
-                  onMouseOver={handleHoveredStake}
-                  onMouseOut={handleUnHoveredStake}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">13.58M</p>
-              <p className="text-white">(74.85%)</p>
-              {isHoveredStake ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute  bottom-10  rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                >
-                  <p> The amount of USDL currently held in the </p>
-                  <p> Stability Pool and percentage of the total</p>
-                  <p>amount in circulation</p>
+            <div className="flex">
+              <div className="flex flex-row  items-center">
+                <img
+                  src="/images/usdl.png"
+                  alt=" loan"
+                  className="w-[28px] h-[28px]"
+                />
+                <div>
+                  <p className="text-white">USDL</p>
+                  <p className="text-xs">$1.230401</p>
                 </div>
-              ) : (
-                ""
-              )}
+              </div>
+              <span className="text-xs text-red-500"> 0.84%</span>
             </div>
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Stability Pool</p>
-              <p className="text-sm">
-                <span>APR</span>{" "}
-                <span
-                  onMouseOver={handleHoveredStability}
-                  onMouseOut={handleUnHoveredStability}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">265.13%</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredStability ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute    rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                >
-                  <p> An estimate of the LOAN token and PLS </p>
-                  <p> returns to Stability Pool participants . This</p>
-                  <p>includes PLS gains from liquidations.</p>
+
+            <div className="flex">
+              <div className="flex flex-row  items-center">
+                <img
+                  src="/images/PLs.png"
+                  alt=" loan"
+                  className="w-[28px] h-[28px]"
+                />
+                <div>
+                  <p className="text-white">PLS</p>
+                  <p className="text-xs">$0.00001</p>
                 </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Staked</p>
-              <p className="text-sm">
-                <span>LOAN</span>{" "}
-                <span
-                  onMouseOver={handleHoveredLoan}
-                  onMouseOut={handleUnHoveredLoan}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">354.17B</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredLoan ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute    rounded-md left-[52rem]  z-50 bg-[#16121a]"
-                >
-                  <p> The total amount of LOAN tokens staked </p>
-                  <p> in the Staking Pool .</p>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-              <p className="text-sm">Staking Pool</p>
-              <p className="text-sm">
-                <span>APR</span>{" "}
-                <span
-                  onMouseOver={handleHoveredStaking}
-                  onMouseOut={handleUnHoveredStaking}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">64.70%</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredStaking ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem]  z-50 bg-[#16121a]"
-                >
-                  <p>An estimate of the annual returns of USDL </p>
-                  <p> and PLS paid to staked LOAN holders</p>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="flex flex-col gap-1  px-4 mx-5">
-              <p className="text-sm">USDL</p>
-              <p className="text-sm">
-                <span>Supply</span>{" "}
-                <span
-                  onMouseOver={handleHoveredSupply}
-                  onMouseOut={handleUnHoveredSupply}
-                >
-                  <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                </span>
-              </p>
-              <p className="text-white">18.14M</p>
-              <p className="text-white">(41.41M USD)</p>
-              {isHoveredSupply ? (
-                <div
-                  style={shadowStyle}
-                  className="p-2 text-sm font-extralight absolute    rounded-md right-[26rem] bottom-0  z-50 bg-[#16121a]"
-                >
-                  <p>The total USDL minted by the system. </p>
-                </div>
-              ) : (
-                ""
-              )}
+              </div>
+              <span className="text-xs text-green-500"> 2.33%</span>
             </div>
           </div>
         </div>

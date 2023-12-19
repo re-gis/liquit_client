@@ -3,23 +3,27 @@ import { Route, Routes } from "react-router-dom";
 import SideBar from "./components/SideBar";
 import Header from "./components/Header";
 import Stalking from "./Stalking/Stalking";
+import { useState } from "react";
 
 const App: React.FC = () => {
+
+  const [openSideBar, setOpenSidebar] = useState(false);
+
   return (
     <>
       <div className="flex h-[100%] main">
         <div className="w-[15%]   ">
-          <SideBar />
+          <SideBar  openSideBar={openSideBar}/>
         </div>
         <div className="w-full">
           <div className="">
-            <Header />
+            <Header openSideBar={openSideBar} setOpenSideBar={setOpenSidebar} />
           </div>
           <Routes>
             <Route path="/" />
             <Route path="/borrow" />
             <Route path="/stability" />
-            <Route path="/staking" element={<Stalking/>} />
+            <Route path="/staking" element={<Stalking  openSideBar={openSideBar}/>} />
             <Route path="/lp" />
             <Route path="/redemptions" />
             <Route path="/liquidations" />
