@@ -64,13 +64,13 @@ const Footer: React.FC = () => {
     // Add other styles as needed
   };
   return (
-    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0">
+    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full xs:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0">
       <h1 className="self-center font-semibold text-3xl text-white">
         Protocol Performance
       </h1>
 
-      <div className="flex lg:flex-row md:flex-row sm:flex-col rounded-md py-3 justify-center lg:items-start md:items-start sm:items-center lg:gap-0 md:gap-0 sm:gap-8 lg:bg-[#111017]   sm:bg-[#0a0c12] lg:w-[100%]">
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs   lg:border-r  md:border-r sm:border-none border-[#272531]">
+      <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col rounded-md py-3 justify-center lg:items-start md:items-start sm:items-center xs:items-start lg:gap-0 md:gap-0 sm:gap-8 xs:gap-10 lg:bg-[#111017]   sm:bg-[#0a0c12]  xs:bg-[#0a0c12] lg:w-[100%]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs   lg:border-r  md:border-r sm:border-none  xs:border-none border-[#cac2f3]">
           <p className="text-sm">Total Value</p>
           <p className="text-sm">
             <span>Locked</span>{" "}
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  lg:border-r  md:border-r sm:border-none border-[#272531]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  lg:border-r  md:border-r sm:border-none xs:border-none border-[#272531]">
           <p className="text-sm">Total Collateral</p>
           <p className="text-sm">
             <span>Ratio</span>{" "}
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  lg:border-r  md:border-r sm:border-none border-[#272531]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  lg:border-r  md:border-r sm:border-none xs:border-none border-[#272531]">
           <p className="text-sm">Staked</p>
           <p className="text-sm">
             <span>USDL</span>{" "}
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  lg:border-r  md:border-r sm:border-none border-[#272531]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  lg:border-r  md:border-r sm:border-none xs:border-none border-[#272531]">
           <p className="text-sm">Stability Pool</p>
           <p className="text-sm">
             <span>APR</span>{" "}
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  lg:border-r  md:border-r sm:border-none border-[#272531]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  lg:border-r  md:border-r sm:border-none xs:border-none border-[#272531]">
           <p className="text-sm">Staked</p>
           <p className="text-sm">
             <span>LOAN</span>{" "}
@@ -199,7 +199,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  lg:border-r  md:border-r sm:border-none border-[#272531]">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  lg:border-r  md:border-r sm:border-none xs:border-none border-[#272531]">
           <p className="text-sm">Staking Pool</p>
           <p className="text-sm">
             <span>APR</span>{" "}
@@ -224,7 +224,7 @@ const Footer: React.FC = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-1 w-[20%] items-center text-xs  ">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs  ">
           <p className="text-sm">USDL</p>
           <p className="text-sm">
             <span>Supply</span>{" "}
@@ -249,7 +249,7 @@ const Footer: React.FC = () => {
           )}
         </div>
       </div>
-      <div className="md:flex lg:hidden lg:flex-row  sm:flex bg-black items-center justify-center md:gap-12 sm:gap-8  md:p-10 sm:p-8 rounded-lg mb-5">
+      <div className="md:flex lg:hidden lg:flex-row  sm:flex xs:flex bg-black items-center justify-center md:gap-12 sm:gap-8 xs:gap-2  md:p-10 sm:p-8 xs:p-6 rounded-lg mb-5">
         <div className="flex">
           <div className="flex flex-row  items-center">
             <img

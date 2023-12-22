@@ -25,19 +25,19 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
   };
 
   return (
-    <div className="flex flex-row  items-center justify-between   py-2 p-5 relative">
+    <div className="flex flex-row  items-center justify-between   py-2 sm:p-5 lg:p-5 md:p-5 xs:p-0 relative">
       <div className="flex flex-row gap-2 items-center">
         <img
           src="/images/logo.png"
           alt="logo"
           className=" h-[40px] w-[40px] md:block sm:block lg:hidden"
         />
-        <img src="/images/battery.png" alt="" className="h=[14px] w-[20px]" />
-        <div>
+        <img src="/images/battery.png" alt="" className="h-[28px] w-[20px] xs:hidden sm:block md:block lg:block" />
+        <div className="xs:hidden sm:block md:block lg:block">
           <p>
             {" "}
             <span className="text-white">TCR</span>{" "}
-            <span className="text-sm">(Normal Mode)</span>
+            <span className=" lg:text-sm md:text-sm sm:text-xs">(Normal Mode)</span>
           </p>
           <div>
             <span className="text-white">22.66% </span>
@@ -52,7 +52,7 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
         </div>
       </div>
 
-      <div className="lg:flex flex-row  gap-12 items-center  justify-center md:hidden sm:hidden">
+      <div className="lg:flex flex-row  gap-12 items-center  justify-center md:hidden sm:hidden xs:hidden">
         <div className="flex">
           <div className="flex flex-row  items-center">
             <img
@@ -101,7 +101,7 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
       <div className="flex flex-row gap-4">
         <Link
           to="#"
-          className=" rounded-md bg-[#762fc1] text-white  p-2 hover:bg-[#3e334b] flex justify-center items-center "
+          className=" rounded-md bg-[#762fc1] text-white  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
         >
           <span>
             <AccountBalanceWalletOutlinedIcon />

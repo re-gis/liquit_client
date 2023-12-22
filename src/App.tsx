@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className="flex main">
-        <div className="lg:w-[15%] md:w-0 sm:w-0 md:hidden lg:flex sm:hidden">
+        <div className="lg:w-[15%] xs:hidden md:hidden lg:flex sm:hidden">
           <SideBar openSideBar={openSideBar} />
         </div>
         <div className="w-full">
