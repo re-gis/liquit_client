@@ -128,7 +128,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
               </button>
             </div>
           </div>
-          <div className="flex flex-1 flex-col gap-5  items-center lg:max-w-[500px] md:max-w-[500px] sm:w-full ">
+          <div className="flex flex-1 flex-col gap-5  items-center lg:max-w-[500px] md:max-w-[500px] sm:w-full lg:bg-inherit md:bg-inherit sm:bg-[#16121A] ">
             <h1 className="text-2xl text-white font-semibold ">Staking Pool</h1>
             <div className="w-full flex flex-col gap-12 p-4">
               <div className="flex flex-col gap-5">
