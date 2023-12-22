@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  --theme-ui-colors-primary: #762fc1;
+  --theme-ui-colors-secondary: #3e334b;
+  --theme-ui-colors-accent: #2eb6ea;
+  --theme-ui-colors-blue: #442FC1;
+  --theme-ui-colors-success: #0B9E3C;
+  --theme-ui-colors-warning: #fd9d28;
+  --theme-ui-colors-danger: #B5231E;
+  --theme-ui-colors-dangerHover: #ff755f;
+  --theme-ui-colors-info: #442FC1;
+  --theme-ui-colors-invalid: rgba(220, 44, 16, 0.05);
+  --theme-ui-colors-alertSuccess: #C4E298;
+  --theme-ui-colors-alertWarning: #DFD898;
+  --theme-ui-colors-alertDanger: #E39F9A;
+  --theme-ui-colors-text: #7E708E;
+  --theme-ui-colors-textAlt: #727379;
+  --theme-ui-colors-textRN: #726B8C;
+  --theme-ui-colors-background: #16121A;
+  --theme-ui-colors-muted: #3e334b;
+  --theme-ui-colors-mutedBackground: #0E1119;
+  --theme-ui-colors-active: white;
+  --theme-ui-colors-heading: white;
+  --theme-ui-colors-sideNav: #0a0c12;
+  --theme-ui-colors-themeDark: #762fc1;
+  --theme-ui-colors-themeLight: white;
+  --theme-ui-colors-lightGrey: #878791;
+  --theme-ui-colors-grey: #282031;
+  --theme-ui-colors-dark: #000000;
+  --theme-ui-colors-overlay: rgba(33, 27, 48, 0.9);
+  --theme-ui-colors-overlaySidenav: rgba(11, 13, 18, 0.9);
+  --theme-ui-colors-modal: #0F0C1A;
+  --theme-ui-colors-action: #9f9fb0;
+  --theme-ui-colors-cardColor: #A6A6A6;
+  --theme-ui-colors-stats: #111017;
+  --theme-ui-colors-tab: #a3a3a3;
+  --theme-ui-colors-tabActive: white;
+  --theme-ui-colors-tabActiveM: white;
+  --theme-ui-colors-tabBg: #3e334b;
+  --theme-ui-colors-slider: #2e2834;
+  --theme-ui-colors-label: #5d6168;
+  --theme-ui-colors-menuBar: #261d30;
+  --theme-ui-colors-line: #27202F;
+  --theme-ui-colors-lineModal: #272531;
+  --theme-ui-colors-lineLPB: #2d263f;
+  --theme-ui-colors-input: #100d14;
+  --theme-ui-colors-thead: #000000;
+  --theme-ui-colors-th: #7E708E;
+  --theme-ui-colors-row: #191524;
+  --theme-ui-colors-liquidPercentage: #3996FF;
+  --theme-ui-colors-connect: #000000;
+  --theme-ui-colors-titleLine: #3e334b;
+  color: var(--theme-ui-colors-text, #7E708E);
+  background-color: var(--theme-ui-colors-background, #16121A);
+
+  font-family: Roboto  sans-serif;
+  line-height: 1.35;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.main{
+  background: linear-gradient(120deg, rgb(33, 27, 49) 0%, rgb(10, 12, 18) 45%, rgb(10, 12, 18) 65%, rgb(28, 31, 19) 100%);
+}

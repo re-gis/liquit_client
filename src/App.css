@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-overlaySidenav {
+  background-color: var(--theme-ui-colors-overlaySidenav, rgba(11, 13, 18, 0.9));
+}
