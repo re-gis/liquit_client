@@ -4,6 +4,7 @@ import SideBar from "./components/SideBar";
 import Header from "./components/Header";
 import Stalking from "./Stalking/Stalking";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
 
@@ -11,9 +12,9 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="flex h-[100%] main">
-        <div className="w-[15%]   ">
-          <SideBar  openSideBar={openSideBar}/>
+      <div className="flex main">
+        <div className="w-[15%]">
+          <SideBar openSideBar={openSideBar} />
         </div>
         <div className="w-full">
           <div className="">
@@ -23,7 +24,10 @@ const App: React.FC = () => {
             <Route path="/" />
             <Route path="/borrow" />
             <Route path="/stability" />
-            <Route path="/staking" element={<Stalking  openSideBar={openSideBar}/>} />
+            <Route
+              path="/staking"
+              element={<Stalking openSideBar={openSideBar} />}
+            />
             <Route path="/lp" />
             <Route path="/redemptions" />
             <Route path="/liquidations" />
@@ -31,6 +35,10 @@ const App: React.FC = () => {
             <Route path="/knowledge" />
             <Route path="/tokens" />
           </Routes>
+
+          <div className="w-[100%] flex justify-center items-center">
+            <Footer />
+          </div>
         </div>
       </div>
     </>

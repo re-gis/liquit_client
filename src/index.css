@@ -55,7 +55,7 @@ body {
   color: var(--theme-ui-colors-text, #7E708E);
   background-color: var(--theme-ui-colors-background, #16121A);
 
-  font-family: Roboto, sans-serif;
+  font-family: Roboto  sans-serif;
   line-height: 1.35;
   font-weight: 600;
   font-size: 16px;
