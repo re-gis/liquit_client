@@ -57,10 +57,10 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
       >
         <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center   justify-center   lg:gap-12 md:gap-5 sm:gap-3 xs:gap-3 lg:px-0 md:px-0 sm:px-8 xs:px-4">
           <hr className="   border-[#3e334b] lg:w-56 md:w-28  sm:w-0" />
-          <p className=" font-semibold md:text-3xl sm:w-full sm:text-xl sm:self-center  text-white ">
+          <p className=" font-semibold md:text-3xl sm:w-full sm:text-xl self-center   text-white ">
             Stake your LOAN token to earn USDL and PLS
           </p>
-          <hr className="h-2   lg:w-56 md:w-28 border-[#3e334b] sm:w-full xs:w-full" />
+          <hr className="h-2   lg:w-96 md:w-28 border-[#3e334b] sm:w-full xs:w-full" />
         </div>
         <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col lg:gap-24 md:gap-8 sm:gap-5 lg:items-center md:items-center sm:items-start md:justify-center lg:justify-center sm:justify-start relative  ">
           <div className="flex flex-col sm:gap-5 xs:gap-8  items-center  flex-1 lg:max-w-[500px] md:max-w-[500px] sm:w-full">
@@ -128,7 +128,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
               </button>
             </div>
           </div>
-          <div className="flex flex-1 flex-col gap-5  items-center lg:max-w-[500px] md:max-w-[500px] sm:w-full xs:w-full lg:bg-inherit md:bg-inherit sm:bg-[#16121A] xs:bg-[#16121A] ">
+          <div className={` ${openSideBar?"xs:hidden sm:hidden md:flex lg:flex":""} flex flex-1 flex-col gap-5  items-center lg:max-w-[500px] md:max-w-[500px] sm:w-full xs:w-full lg:bg-inherit md:bg-inherit sm:bg-[#16121A] xs:bg-[#16121A] `}>
             <h1 className="text-2xl text-white font-semibold ">Staking Pool</h1>
             <div className="w-full flex flex-col gap-12 p-4">
               <div className="flex flex-col gap-5">

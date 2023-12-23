@@ -6,9 +6,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
+const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
   const [isHovered, setIsHovered] = useState(false);
-
 
   const shadowStyle = {
     boxShadow: "0px 0px 12px 0px rgba(118, 47, 193, 0.7)",
@@ -26,18 +25,24 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
 
   return (
     <div className="flex flex-row  items-center justify-between   py-2 sm:p-5 lg:p-5 md:p-5 xs:p-0 relative">
-      <div className="flex flex-row gap-2 items-center">
+      <div className="flex flex-row gap-2 items-center ">
         <img
           src="/images/logo.png"
           alt="logo"
           className=" h-[40px] w-[40px] md:block sm:block lg:hidden"
         />
-        <img src="/images/battery.png" alt="" className="h-[28px] w-[20px] xs:hidden sm:block md:block lg:block" />
+        <img
+          src="/images/battery.png"
+          alt=""
+          className="h-[28px] w-[20px] xs:hidden sm:block md:block lg:block"
+        />
         <div className="xs:hidden sm:block md:block lg:block">
           <p>
             {" "}
             <span className="text-white">TCR</span>{" "}
-            <span className=" lg:text-sm md:text-sm sm:text-xs">(Normal Mode)</span>
+            <span className=" lg:text-sm md:text-sm sm:text-xs">
+              (Normal Mode)
+            </span>
           </p>
           <div>
             <span className="text-white">22.66% </span>
@@ -98,7 +103,7 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-8">
         <Link
           to="#"
           className=" rounded-md bg-[#762fc1] text-white  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
@@ -126,8 +131,15 @@ const Header: React.FC<openSideBarProp> = ({openSideBar,setOpenSideBar}) => {
             }}
           />
         </button>
-         <button onClick={handleModel} className="md:flex sm:flex lg:hidden">
-          {openSideBar ? <CloseIcon  sx={{fontSize:"30px"}}/> : <MenuIcon sx={{fontSize:"30px"}} />}
+        <button
+          onClick={handleModel}
+          className="md:flex sm:flex lg:hidden  items-center relative z-50 opacity-100"
+        >
+          {openSideBar ? (
+            <CloseIcon sx={{ fontSize: "30px" }} />
+          ) : (
+            <MenuIcon sx={{ fontSize: "30px" }} />
+          )}
         </button>
       </div>
 
