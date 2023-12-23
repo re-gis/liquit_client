@@ -7,13 +7,13 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-
   const [openSideBar, setOpenSidebar] = useState(false);
 
+ 
   return (
     <>
       <div className="flex main">
-        <div className="w-[15%]">
+        <div className="lg:w-[15%]  lg:flex">
           <SideBar openSideBar={openSideBar} />
         </div>
         <div className="w-full">
@@ -36,7 +36,11 @@ const App: React.FC = () => {
             <Route path="/tokens" />
           </Routes>
 
-          <div className="w-[100%] flex justify-center items-center">
+          <div
+            className={`w-[100%] flex justify-center items-center ${
+              openSideBar ? "xs:hidden sm:hidden md:hidden lg:flex" : ""
+            }`}
+          >
             <Footer />
           </div>
         </div>
