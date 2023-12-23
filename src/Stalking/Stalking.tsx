@@ -103,6 +103,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   onBlur={handleInputBlur}
                   style={shadowStyle1}
                 />
+                
                 <div className="flex flex-row absolute items-center top-4 text-xs left-2">
                   <p>{stake ? "STAKE LOAN" : "UNSTAKE LOAN"}</p>
                   <img src="/images/loan.png" alt="" className="w-6 h-6" />
