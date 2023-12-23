@@ -57,19 +57,19 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
       >
         <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center   justify-center   lg:gap-12 md:gap-5 sm:gap-3 xs:gap-3 lg:px-0 md:px-0 sm:px-8 xs:px-4">
           <hr className="   border-[#3e334b] lg:w-56 md:w-28  sm:w-0" />
-          <p className=" font-semibold md:text-3xl sm:w-full sm:text-xl self-center   text-white ">
+          <p className=" font-semibold md:text-3xl sm:w-full sm:text-xl self-center  sm:flex sm:items-center sm:justify-center  text-white ">
             Stake your LOAN token to earn USDL and PLS
           </p>
           <hr className="h-2   lg:w-96 md:w-28 border-[#3e334b] sm:w-full xs:w-full" />
         </div>
-        <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col lg:gap-24 md:gap-8 sm:gap-5 lg:items-center md:items-center sm:items-start md:justify-center lg:justify-center sm:justify-start relative  ">
+        <div className="flex lg:flex-row md:px-5 sm:px-5 xs:px-5 md:flex-row sm:flex-col xs:flex-col lg:gap-24 md:gap-8 sm:gap-5 lg:items-center md:items-center sm:items-start md:justify-center lg:justify-center sm:justify-start relative  ">
           <div className="flex flex-col sm:gap-5 xs:gap-8  items-center  flex-1 lg:max-w-[500px] md:max-w-[500px] sm:w-full">
             <h1 className="text-2xl text-white font-semibold ">Stake LOAN</h1>
             <div
               className="w-[100%] border border-[#762fc1] rounded-lg   flex flex-col lg:gap-16 md:gap-16 sm:gap-10 xs:gap-6 p-4 bg-black"
               style={shadowStyle}
             >
-              <div className="flex flex-row lg:gap-10 md:gap-2 xs:gap-1 justify-between">
+              <div className="flex xs:flex-col sm:flex-row lg:gap-10 md:gap-2 xs:gap-1 justify-between">
                 <button
                   className={` ${
                     stake ? "lg:bg-[#2e2834] md:bg-[#2e2834] sm:border-b-4 xs:border-b-2 border-[#2e2834]" : ""
@@ -109,7 +109,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   {stake ? "Wallet" : "Staked"} : 0.00 LOAN
                 </p>
               </div>
-              <div className="flex flex-row lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1 w-full justify-between items-center">
+              <div className="flex xs:flex-col sm:flex-row flex-row lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1 w-full justify-between items-center">
                 <button className="rounded-md max-w-[25%]  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
                   25%
                 </button>

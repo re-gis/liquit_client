@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Stalking from "./Stalking/Stalking";
 import { useState } from "react";
 import Footer from "./components/Footer";
+import NotFoundPage from "./NotFoundScreen/NotFoundPage";
 
 const App: React.FC = () => {
   const [openSideBar, setOpenSidebar] = useState(false);
@@ -21,19 +22,19 @@ const App: React.FC = () => {
             <Header openSideBar={openSideBar} setOpenSideBar={setOpenSidebar} />
           </div>
           <Routes>
-            <Route path="/" />
-            <Route path="/borrow" />
-            <Route path="/stability" />
+            <Route path="/" element={<Stalking openSideBar={openSideBar} />}/>
+            {/* <Route path="/borrow" />
+            <Route path="/stability" /> */}
             <Route
               path="/staking"
               element={<Stalking openSideBar={openSideBar} />}
             />
-            <Route path="/lp" />
-            <Route path="/redemptions" />
+            <Route path="/*" element={<NotFoundPage />} />
+            {/* <Route path="/redemptions" />
             <Route path="/liquidations" />
             <Route path="/analytics" />
             <Route path="/knowledge" />
-            <Route path="/tokens" />
+            <Route path="/tokens" /> */}
           </Routes>
 
           <div

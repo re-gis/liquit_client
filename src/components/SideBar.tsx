@@ -13,8 +13,11 @@ import token from "../assets/tokens.png";
 import bor from "../assets/bopng.png";
 
 const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
-  
-  
+  console.log(openSideBar)
+  const setBarToClose = () => {
+    openSideBar = !openSideBar;
+    console.log(openSideBar)
+  }
   return (
     <>
       {!openSideBar? (
@@ -224,14 +227,14 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
           </div>
         </div>
       ) : (
-        <div className="w-[100%] absolute z-10  inset-0  min-h-full md:flex sm:flex xs:flex lg:hidden  flex-row gap-0  overflow-y-scroll">
+        <div className="w-[100%] absolute z-10 h-[100%] bg-black overflow-x-scroll  inset-0  min-h-full md:flex sm:flex xs:flex lg:hidden  flex-row gap-0  overflow-y-scroll">
           <div className="md:w-[35%] sm:w-[35%] xs:w-[55%] bg-black border-r h-full  flex flex-col  justify-between p-5">
             <div className="w-[100%]">
               <img src={logo} className="h-[35px]" alt="" />
             </div>
             <div>
               <ul className="flex flex-col gap-9">
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/"}
@@ -243,7 +246,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Start Here
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/borrow"}
@@ -255,7 +258,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Borrow USDL
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/stability"}
@@ -267,7 +270,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Stability Pool
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/staking"}
@@ -279,7 +282,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Staking Pool
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/lp"}
@@ -291,7 +294,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     LP Rewards
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/redemptions"}
@@ -303,7 +306,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Redemptions
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/liquidations"}
@@ -315,7 +318,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     LIquidations
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/analytics"}
@@ -327,7 +330,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Analytics
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/knowledge"}
@@ -339,7 +342,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     Knowledge Base
                   </Link>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
                     className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
                     to={"/tokens"}
@@ -356,7 +359,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
             <div className="flex flex-col gap-2">
               <h2>Social Media</h2>
               <ul className="flex items-center gap-7">
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <svg
                     className="w-[15px] h-[15px]"
                     stroke="currentColor"
@@ -370,7 +373,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                     <path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path>
                   </svg>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <svg
                     className="w-[15px] h-[15px]"
                     stroke="currentColor"
@@ -385,7 +388,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   </svg>
                 </li>
 
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <svg
                     className="w-[15px] h-[15px]"
                     stroke="currentColor"
@@ -400,7 +403,7 @@ const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   </svg>
                 </li>
 
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={setBarToClose}>
                   <svg
                     className="w-[15px] h-[15px]"
                     stroke="currentColor"
