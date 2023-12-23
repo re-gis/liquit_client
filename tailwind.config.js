@@ -2,9 +2,6 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-<<<<<<< HEAD
-    extend: {},
-=======
     screens: {
       'xs':'320px',
       'sm': '480px',
@@ -22,7 +19,6 @@ export default {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     }
->>>>>>> 6da48c474800a327591a1f958a1221e9e6e08aa0
   },
   plugins: [],
 };
