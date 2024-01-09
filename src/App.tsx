@@ -15,7 +15,7 @@ const App: React.FC = () => {
     <>
       <div className="flex main">
         <div className="lg:w-[15%]  lg:flex">
-          <SideBar openSideBar={openSideBar} />
+          <SideBar openSideBar={openSideBar} setOpenSideBar={setOpenSidebar}/>
         </div>
         <div className="w-full">
           <div className="">
