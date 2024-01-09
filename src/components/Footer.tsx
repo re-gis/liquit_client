@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           {isHoveredPLS ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute   rounded-md left-[10%] md:left-[12%] sm:left-[30%] sm:top-[11%]     z-50 bg-[#16121a] "
+              className="p-2 text-sm font-extralight absolute   rounded-md left-[10%] md:left-[29%] sm:left-[30%] xs:left-[25%] lg:bottom-[10%] md:bottom-[55%] sm:bottom-[81%]  xs:bottom-[83%]    z-50 bg-[#16121a] "
             >
               <p> The total value of PLS locked as collateral </p>
               <p>in the system . Shown as total PLS and</p>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
           {isHoveredRatio ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute   rounded-md lg:left-[25%]  md:left-[30%] sm:top-[22%]   z-50 bg-[#16121a] "
+              className="p-2 text-sm font-extralight absolute   rounded-md lg:left-[25%]  md:left-[30%] sm:bottom-[70%] xs:bottom-[72%]   z-50 bg-[#16121a] "
             >
               <p> The ration of the USD value of the entire </p>
               <p> system collateral divided by the entire</p>
