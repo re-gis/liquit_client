@@ -4,13 +4,6 @@ import React, { useState, ChangeEvent } from "react";
 const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
   const [stake, setStake] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isHoveredPLS, setIsHoveredPLS] = useState(false);
-  const [isHoveredRatio, setIsHoveredRatio] = useState(false);
-  const [isHoveredStake, setIsHoveredStake] = useState(false);
-  const [isHoveredStability, setIsHoveredStability] = useState(false);
-  const [isHoveredLoan, setIsHoveredLoan] = useState(false);
-  const [isHoveredStaking, setIsHoveredStaking] = useState(false);
-  const [isHoveredSupply, setIsHoveredSupply] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const [loan, setLoan] = useState("0.00");
@@ -50,94 +43,50 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
   };
 
   //   handle hove of footer ones
-  const handleHoveredPLS = () => {
-    setIsHoveredPLS(true);
-  };
-  const handleUnHoveredPLS = () => {
-    setIsHoveredPLS(false);
-  };
 
-  const handleHoveredRatio = () => {
-    setIsHoveredRatio(true);
-  };
-  const handleUnHoveredRatio = () => {
-    setIsHoveredRatio(false);
-  };
 
-  const handleHoveredStake = () => {
-    setIsHoveredStake(true);
-  };
-  const handleUnHoveredStake = () => {
-    setIsHoveredStake(false);
-  };
 
-  const handleHoveredStability = () => {
-    setIsHoveredStability(true);
-  };
-  const handleUnHoveredStability = () => {
-    setIsHoveredStability(false);
-  };
 
-  const handleHoveredLoan = () => {
-    setIsHoveredLoan(true);
-  };
-  const handleUnHoveredLoan = () => {
-    setIsHoveredLoan(false);
-  };
 
-  const handleHoveredStaking = () => {
-    setIsHoveredStaking(true);
-  };
-  const handleUnHoveredStaking = () => {
-    setIsHoveredStaking(false);
-  };
 
-  const handleHoveredSupply = () => {
-    setIsHoveredSupply(true);
-  };
-  const handleUnHoveredSupply = () => {
-    setIsHoveredSupply(false);
-  };
 
   return (
     <div>
       <div
-        className={`flex  md:${
-          openSideBar ? "z-0" : "z-50"
-        } flex-col  justify-center mt-16 gap-16 pb-6`}
+        className={`flex  flex-col  justify-center mt-16 lg:gap-16 md:gap-16 sm:gap-8 pb-6 `}
       >
-        <div className="flex flex-row  items-center   justify-center   lg:gap-12 md:gap-5">
-          <hr className="   border-[#3e334b] lg:w-56 md:w-28 " />
-          <p className=" font-semibold text-3xl text-white ">
+        <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center   justify-center   lg:gap-12 md:gap-5 sm:gap-3 xs:gap-3 lg:px-0 md:px-0 sm:px-8 xs:px-4">
+          <hr className="   border-[#3e334b] lg:w-56 md:w-28  sm:w-0" />
+          <p className=" font-semibold md:text-3xl sm:w-full sm:text-xl self-center  sm:flex sm:items-center sm:justify-center  text-white ">
             Stake your LOAN token to earn USDL and PLS
           </p>
-          <hr className="h-2   lg:w-56 md:w-28 border-[#3e334b]" />
+          <hr className="h-2   lg:w-96 md:w-28 border-[#3e334b] sm:w-full xs:w-full" />
         </div>
-        <div className="flex flex-row lg:gap-24 md:gap-8 items-center justify-center relative ">
-          <div className="flex flex-col gap-5  items-center  flex-1 max-w-[500px]">
+        <div className="flex lg:flex-row md:px-5 sm:px-5 xs:px-5 md:flex-row sm:flex-col xs:flex-col lg:gap-24 md:gap-8 sm:gap-5 lg:items-center md:items-center sm:items-start md:justify-center lg:justify-center sm:justify-start relative  ">
+          <div className="flex flex-col sm:gap-5 xs:gap-8  items-center  flex-1 lg:max-w- md:max-w-[500px] xs:w-full sm:w-full">
             <h1 className="text-2xl text-white font-semibold ">Stake LOAN</h1>
             <div
-              className="w-[100%] border border-[#762fc1] rounded-lg   flex flex-col gap-16 p-4 bg-black"
+              className="w-full border border-[#762fc1] rounded-lg   flex flex-col lg:gap-16 md:gap-16 sm:gap-10 xs:gap-6 p-4 bg-black"
               style={shadowStyle}
             >
-              <div className="flex flex-row lg:gap-10 md:gap-2 justify-between">
+              <div className="flex xs:flex-row sm:flex-row lg:gap-10 md:gap-2 xs:gap-1 justify-between">
                 <button
                   className={` ${
-                    stake ? "bg-[#2e2834]" : ""
-                  } text-gray-500 hover:text-white py-0 lg:px-8 md:px-5 rounded-lg`}
+                    stake ? "lg:bg-[#2e2834] md:bg-[#2e2834] sm:border-b-4 xs:border-b-2 border-[#2e2834]" : ""
+                  } text-gray-500 hover:text-white py-0 lg:px-8 md:px-5 sm:px-12 lg:rounded-lg md:rounded-lg sm:rounded-none`}
                   onClick={handleStake}
                 >
                   Stake
                 </button>
                 <button
-                  className={`  hover:text-white py-3 lg:px-12 md:px-5 rounded-lg ${
-                    stake ? "text-gray-500" : "bg-[#2e2834] text-white"
+                  className={`  hover:text-white py-3 lg:px-12 md:px-5 sm:px-12 lg:rounded-lg md:rounded-lg sm:rounded-none ${
+                    stake ? "text-gray-500" : "lg:bg-[#2e2834] md:bg-[#2e2834] sm:border-b-4 xs:border-b-2 border-[#2e2834]"
                   }`}
                   onClick={handleUnstake}
                 >
                   UnStake
                 </button>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col lg:ap-2 md:gap-2 sm:gap-0">
                   <span className="font-extralight">Current APR</span>
                   <span className="text-white">64.70%</span>
                 </div>
@@ -147,30 +96,30 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   type="text"
                   placeholder="0.00"
                   className="bg-[#100d14] border border-[#3e334b]  rounded-lg hover:outline-none text-right placeholder:text-right px-2 py-4 w-full "
-                  onChange={handleOnChange}
+                  onChange={handleOnChange}                                                                                                                 
                   onFocus={handleInputFocus}
                   onBlur={handleInputBlur}
                   style={shadowStyle1}
                 />
-                <div className="flex flex-row absolute top-5 text-xs left-2">
-                  <p>STAKE LOAN</p>
+                <div className="flex flex-row absolute items-center top-4 text-xs left-2">
+                  <p>{stake ? "STAKE LOAN" : "UNSTAKE LOAN"}</p>
                   <img src="/images/loan.png" alt="" className="w-6 h-6" />
                 </div>
                 <p className="self-end font-extralight text-sm">
                   {stake ? "Wallet" : "Staked"} : 0.00 LOAN
-                </p>
+                </p>                                                                                                                                                                                         
               </div>
-              <div className="flex flex-row gap-3 w-full justify-between items-center">
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1  lg:px-10 md:px-5">
+              <div className="flex xs:flex-row sm:flex-row flex-row lg:gap-6 md:gap-3 sm:gap-1 xs:gap-1  justify-between items-center ">                                                                                                                                                                                                                                                                          
+                <button className="rounded-md max-w-[25%] flex  justify-center  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   25%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
+                <button className="rounded-md max-w-[25%]  flex  justify-center  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   50%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
+                <button className="rounded-md max-w-[25%] flex  justify-center   hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   75%
                 </button>
-                <button className="rounded-md bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-10 md:px-5">
+                <button className="rounded-md max-w-[25%] hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   100%
                 </button>
               </div>
@@ -179,27 +128,27 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
               </button>
             </div>
           </div>
-          <div className="flex flex-1 flex-col gap-5  items-center max-w-[500px] ">
+          <div className={` ${openSideBar?"xs:hidden sm:hidden md:flex lg:flex":""} flex flex-1 flex-col gap-5  items-center lg:max-w-[500px] md:max-w-[500px] sm:w-full xs:w-full lg:bg-inherit md:bg-inherit sm:bg-[#16121A] xs:bg-[#16121A] `}>
             <h1 className="text-2xl text-white font-semibold ">Staking Pool</h1>
-            <div className="w-full     flex flex-col gap-12 p-4">
+            <div className="w-full flex flex-col gap-12 p-4">
               <div className="flex flex-col gap-5">
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col  xs:flex-col justify-between items-center">
                   <p className="text-sm font-light">
                     Your {stake ? "New Stake" : "Unstake"}
                   </p>
                   <p className="text-white">{loan}LOAN</p>
                 </div>
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col  justify-between items-center">
                   <p className="text-sm font-light">Your Existing Stakes</p>
                   <p className="text-white">0.00 LOAN</p>
                 </div>
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col  justify-between items-center">
                   <p className="text-sm font-light">
                     Your Total Staking Balance
                   </p>
                   <p className="text-white">{loan}LOAN</p>
                 </div>
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col  justify-between items-center">
                   <p className="text-sm font-light flex flex-row gap-2">
                     <span>Your Pool Share</span>
                     <span
@@ -217,11 +166,11 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                 Your Rewards
               </h1>
               <div className="flex flex-col gap-3">
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col justify-between items-center">
                   <p className="text-sm font-light">Redemption Fees</p>
                   <p className="text-white">0.00 PLS</p>
                 </div>
-                <div className="flex flex-row gap-44 justify-between items-center">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col  xs:flex-col justify-between items-center">
                   <p className="text-sm font-light">Issuance Gain</p>
                   <p className="text-white">0.00 USDL</p>
                 </div>
@@ -238,7 +187,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
           {isHovered ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute  top-48  z-50 bg-[#16121a]"
+              className="p-3 text-sm font-extralight absolute  min-w-fit lg:top-48 md:top-48 sm:bottom-72  lg:left-96 sm:left-48   z-50 bg-[#16121a]"
             >
               <p> If your pool share size smaller than </p>
               <p> 0.000000% the system will display 0.00%</p>
@@ -247,240 +196,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
             ""
           )}
         </div>
-        <div className="flex flex-col gap-3">
-          <h1 className="self-center  font-semibold text-3xl text-white">
-            Protocol Performance
-          </h1>
-
-          <div className="flex w-full justify-center items-center">
-            <div className="flex flex-row gap-0 items-center  rounded-md  justify-center bg-[#111017]  p-2 mb-2 max-w-[1100px]">
-              <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Total Value</p>
-                <p className="text-sm">
-                  <span>Locked</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredPLS}
-                    onMouseOut={handleUnHoveredPLS}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">717.18B PLS</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredPLS ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute   rounded-md left-[29rem]  z-50 bg-[#16121a]"
-                  >
-                    <p> The total value of PLS locked as collateral </p>
-                    <p>in the system . Shown as total PLS and</p>
-                    <p>USD value.</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Total Collateral</p>
-                <p className="text-sm">
-                  <span>Ratio</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredRatio}
-                    onMouseOut={handleUnHoveredRatio}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">228.21%</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredRatio ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute   rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                  >
-                    <p> The ration of the USD value of the entire </p>
-                    <p> system collateral divided by the entire</p>
-                    <p>system debt.</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Staked</p>
-                <p className="text-sm">
-                  <span>USDL</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredStake}
-                    onMouseOut={handleUnHoveredStake}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">13.58M</p>
-                <p className="text-white">(74.85%)</p>
-                {isHoveredStake ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute  bottom-10  rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                  >
-                    <p> The amount of USDL currently held in the </p>
-                    <p> Stability Pool and percentage of the total</p>
-                    <p>amount in circulation</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Stability Pool</p>
-                <p className="text-sm">
-                  <span>APR</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredStability}
-                    onMouseOut={handleUnHoveredStability}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">265.13%</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredStability ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute    rounded-md left-[40rem]  z-50 bg-[#16121a]"
-                  >
-                    <p> An estimate of the LOAN token and PLS </p>
-                    <p> returns to Stability Pool participants . This</p>
-                    <p>includes PLS gains from liquidations.</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Staked</p>
-                <p className="text-sm">
-                  <span>LOAN</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredLoan}
-                    onMouseOut={handleUnHoveredLoan}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">354.17B</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredLoan ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute    rounded-md left-[52rem]  z-50 bg-[#16121a]"
-                  >
-                    <p> The total amount of LOAN tokens staked </p>
-                    <p> in the Staking Pool .</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-1 border-r border-[#272531] px-4 mx-5">
-                <p className="text-sm">Staking Pool</p>
-                <p className="text-sm">
-                  <span>APR</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredStaking}
-                    onMouseOut={handleUnHoveredStaking}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">64.70%</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredStaking ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem]  z-50 bg-[#16121a]"
-                  >
-                    <p>An estimate of the annual returns of USDL </p>
-                    <p> and PLS paid to staked LOAN holders</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-1  px-4 mx-5">
-                <p className="text-sm">USDL</p>
-                <p className="text-sm">
-                  <span>Supply</span>{" "}
-                  <span
-                    onMouseOver={handleHoveredSupply}
-                    onMouseOut={handleUnHoveredSupply}
-                  >
-                    <HelpOutlinedIcon sx={{ fontSize: "18px" }} />
-                  </span>
-                </p>
-                <p className="text-white">18.14M</p>
-                <p className="text-white">(41.41M USD)</p>
-                {isHoveredSupply ? (
-                  <div
-                    style={shadowStyle}
-                    className="p-2 text-sm font-extralight absolute    rounded-md right-[26rem] bottom-0  z-50 bg-[#16121a]"
-                  >
-                    <p>The total USDL minted by the system. </p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="md:flex lg:hidden flex-row gap-24 items-center  rounded-md  justify-center bg-black   p-9 ml-16 mb-2 w-[80%]">
-            <div className="flex">
-              <div className="flex flex-row  items-center">
-                <img
-                  src="/images/loan.png"
-                  alt=" loan"
-                  className="w-[28px] h-[28px]"
-                />
-                <div>
-                  <p className="text-white">LOAN</p>
-                  <p className="text-xs">$0.00001</p>
-                </div>
-              </div>
-              <span className="text-xs text-green-500"> 1.84%</span>
-            </div>
-            <div className="flex">
-              <div className="flex flex-row  items-center">
-                <img
-                  src="/images/usdl.png"
-                  alt=" loan"
-                  className="w-[28px] h-[28px]"
-                />
-                <div>
-                  <p className="text-white">USDL</p>
-                  <p className="text-xs">$1.230401</p>
-                </div>
-              </div>
-              <span className="text-xs text-red-500"> 0.84%</span>
-            </div>
-
-            <div className="flex">
-              <div className="flex flex-row  items-center">
-                <img
-                  src="/images/PLs.png"
-                  alt=" loan"
-                  className="w-[28px] h-[28px]"
-                />
-                <div>
-                  <p className="text-white">PLS</p>
-                  <p className="text-xs">$0.00001</p>
-                </div>
-              </div>
-              <span className="text-xs text-green-500"> 2.33%</span>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
