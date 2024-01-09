@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
   const handleUnHoveredRatio = () => {
     setIsHoveredRatio(false);
   };
-
+  
   const handleHoveredStake = () => {
     setIsHoveredStake(true);
   };
@@ -64,13 +64,13 @@ const Footer: React.FC = () => {
     // Add other styles as needed
   };
   return (
-    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full xs:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0">
+    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full xs:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0 relative">
       <h1 className="self-center font-semibold text-3xl text-white">
         Protocol Performance
       </h1>
 
-      <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col rounded-md py-3 justify-center lg:items-start md:items-start sm:items-center xs:items-start lg:gap-0 md:gap-0 sm:gap-8 xs:gap-10 lg:bg-[#111017]   sm:bg-[#0a0c12]  xs:bg-[#0a0c12] lg:w-[100%]">
-        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs   lg:border-r  md:border-r sm:border-none  xs:border-none border-[#cac2f3]">
+      <div className="flex lg:flex-row md:flex-row sm:flex-col xs:flex-col rounded-md py-3 justify-center lg:items-start md:items-start sm:items-center xs:items-start lg:gap-0 md:gap-0 sm:gap-8 xs:gap-10 lg:bg-[#111017]   sm:bg-[#0a0c12]  xs:bg-[#0a0c12] lg:w-[100%] ">
+        <div className="flex flex-col gap-1 md:w-[20%]  sm:w-full xs:w-full items-center text-xs   lg:border-r  md:border-r sm:border-none  xs:border-none border-[#cac2f3] ">
           <p className="text-sm">Total Value</p>
           <p className="text-sm">
             <span>Locked</span>{" "}
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           {isHoveredPLS ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute   rounded-md left-[29rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute   rounded-md left-[10%] md:left-[12%] sm:left-[30%] sm:top-[11%]     z-50 bg-[#16121a] "
             >
               <p> The total value of PLS locked as collateral </p>
               <p>in the system . Shown as total PLS and</p>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
           {isHoveredRatio ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute   rounded-md left-[40rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute   rounded-md lg:left-[25%]  md:left-[30%] sm:top-[22%]   z-50 bg-[#16121a] "
             >
               <p> The ration of the USD value of the entire </p>
               <p> system collateral divided by the entire</p>
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
           {isHoveredStake ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute  bottom-10  rounded-md left-[40rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute  bottom-10 md:bottom-16  rounded-md left-[40rem] md:left-[15rem] sm:left-[10rem] sm:bottom-[33rem] xs:left-[3rem] xs:bottom-[41rem]  z-50 bg-[#16121a]"
             >
               <p> The amount of USDL currently held in the </p>
               <p> Stability Pool and percentage of the total</p>
@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
           {isHoveredStability ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute    rounded-md left-[40rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute    rounded-md left-[40rem] md:left-[20rem] md:bottom-16 sm:left-[10rem] sm:bottom-[25rem] xs:left-[3rem] xs:bottom-[33rem]  z-50 bg-[#16121a]"
             >
               <p> An estimate of the LOAN token and PLS </p>
               <p> returns to Stability Pool participants . This</p>
@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
           {isHoveredLoan ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute rounded-md left-[52rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute rounded-md left-[52rem] md:left-[28rem]   md:bottom-16  sm:left-[10rem] sm:bottom-[20rem] xs:left-[3rem] xs:bottom-[25rem]  z-50 bg-[#16121a] "
             >
               <p> The total amount of LOAN tokens staked </p>
               <p> in the Staking Pool .</p>
@@ -215,7 +215,7 @@ const Footer: React.FC = () => {
           {isHoveredStaking ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem]  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute    rounded-md right-[40rem] md:right-[5rem] md:bottom-20 sm:right-[8rem] sm:bottom-[20rem] xs:right-[3rem] xs:bottom-[25rem]  z-50 bg-[#16121a]"
             >
               <p>An estimate of the annual returns of USDL </p>
               <p> and PLS paid to staked LOAN holders</p>
@@ -240,7 +240,7 @@ const Footer: React.FC = () => {
           {isHoveredSupply ? (
             <div
               style={shadowStyle}
-              className="p-2 text-sm font-extralight absolute    rounded-md right-[26rem] bottom-0  z-50 bg-[#16121a]"
+              className="p-2 text-sm font-extralight absolute    rounded-md right-[26rem] md:right-[8rem] md:bottom-4 bottom-0 sm:right-[10rem] sm:bottom-[13rem] xs:right-[3rem] xs:bottom-[18rem]  z-50 bg-[#16121a]"
             >
               <p>The total USDL minted by the system. </p>
             </div>
