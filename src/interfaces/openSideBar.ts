@@ -5,6 +5,5 @@ interface openSideBarProp {
 }
 
 interface openSideBarPropValue {
-    openSideBar: boolean;
-  }
-  
+  openSideBar: boolean;
+}

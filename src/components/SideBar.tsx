@@ -12,12 +12,12 @@ import stap from "../assets/stapng.png";
 import token from "../assets/tokens.png";
 import bor from "../assets/bopng.png";
 
-const SideBar: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
-  console.log(openSideBar)
+const SideBar: React.FC<openSideBarProp> = ({ openSideBar ,setOpenSideBar }) => {
   const setBarToClose = () => {
-    openSideBar = !openSideBar;
-    console.log(openSideBar)
+setOpenSideBar(prev=>!prev)
   }
+
+
   return (
     <>
       {!openSideBar? (
