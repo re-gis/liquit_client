@@ -22,7 +22,7 @@ setOpenSideBar(prev=>!prev)
     <>
       {!openSideBar? (
         <div
-          className={` xs:hidden sm:hidden md:hidden lg:flex flex-col gap-12 bg-black h-full p-5  `}
+          className={` xs:hidden sm:hidden md:hidden lg:flex flex-col gap-12 bg-black  p-5  `}
         >
           <div className="w-[100%]">
             <img src={logo} className="h-[35px]" alt="" />
@@ -151,7 +151,7 @@ setOpenSideBar(prev=>!prev)
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <h2>Social Media</h2>
             <ul className="flex items-center gap-7">
               <li className="cursor-pointer">

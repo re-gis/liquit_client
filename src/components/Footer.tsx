@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
     // Add other styles as needed
   };
   return (
-    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full xs:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0 relative">
+    <div className="flex mt-9 md:w-[90%] lg:w-[90%] sm:w-full xs:w-full justify-center flex-col md:gap-3 lg:gap-3 sm:gap-0 relative pb-16">
       <h1 className="self-center font-semibold text-3xl text-white">
         Protocol Performance
       </h1>
