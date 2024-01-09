@@ -24,7 +24,7 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
   };
 
   return (
-    <div className="flex xs:flex-col sm:flex-row  items-center justify-between   py-2 sm:p-5 lg:p-5 md:p-5 xs:p-0 relative">
+    <div className="flex xs:flex-row sm:flex-row  items-center sm:justify-between  xs:justify-around  py-2 sm:p-5 lg:p-5 md:p-5 xs:p-3 relative xs:">
       <div className="flex xs:flex-col sm:flex-row gap-2 items-center ">
         <img
           src="/images/logo.png"
@@ -103,7 +103,7 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
         </div>
       </div>
 
-      <div className="flex xs:flex-col-reverse xs:w-[100%] sm:w-[auto] sm:flex-row xs:px-5 flex-row gap-8 xs:gap-1 sm:gap-3">
+      <div className="flex xs:flex-row xs:w-[100%] sm:w-[auto] sm:flex-row xs:px-5 flex-row gap-8 xs:gap-1 sm:gap-3 xs:justify-between">
         <Link
           to="#"
           className=" rounded-md bg-[#762fc1] text-white sm:text-xs xs:text-xs  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
@@ -115,7 +115,7 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
         </Link>
         <Link
           to="#"
-          className="rounded-md text-center bg-[#3e334b] text-white  p-2 lg:flex items-center justify-center  hover:bg-[#762fc1] md:hidden sm:hidden  "
+          className="rounded-md text-center bg-[#3e334b] text-white  p-2 lg:flex items-center justify-center  hover:bg-[#762fc1] md:hidden sm:hidden  xs:hidden"
         >
           Tour{" "}
           <span>

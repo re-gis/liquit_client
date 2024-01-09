@@ -249,7 +249,7 @@ const Footer: React.FC = () => {
           )}
         </div>
       </div>
-      <div className="md:flex lg:hidden lg:flex-row  sm:flex xs:flex-col xs:justify-center xs:items-center xs:w-[100%] sm:w-[auto] sm:flex-row bg-black items-center justify-center md:gap-12 sm:gap-8 xs:gap-2  md:p-10 sm:p-8 xs:p-6 rounded-lg mb-5">
+      <div className="md:flex lg:hidden sm:flex xs:flex xs:flex-col   sm:flex-row bg-black  md:items-center sm:items-center xs:items-center md:justify-center sm:justify-center xs:justify-center md:gap-12 sm:gap-8 xs:gap-2  md:p-10 sm:p-8 xs:p-6 rounded-lg mb-5">
         <div className="flex">
           <div className="flex flex-row  items-center">
             <img

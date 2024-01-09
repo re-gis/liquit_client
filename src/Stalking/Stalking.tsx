@@ -63,13 +63,13 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
           <hr className="h-2   lg:w-96 md:w-28 border-[#3e334b] sm:w-full xs:w-full" />
         </div>
         <div className="flex lg:flex-row md:px-5 sm:px-5 xs:px-5 md:flex-row sm:flex-col xs:flex-col lg:gap-24 md:gap-8 sm:gap-5 lg:items-center md:items-center sm:items-start md:justify-center lg:justify-center sm:justify-start relative  ">
-          <div className="flex flex-col sm:gap-5 xs:gap-8  items-center  flex-1 lg:max-w-[500px] md:max-w-[500px] sm:w-full">
+          <div className="flex flex-col sm:gap-5 xs:gap-8  items-center  flex-1 lg:max-w- md:max-w-[500px] xs:w-full sm:w-full">
             <h1 className="text-2xl text-white font-semibold ">Stake LOAN</h1>
             <div
-              className="w-[100%] border border-[#762fc1] rounded-lg   flex flex-col lg:gap-16 md:gap-16 sm:gap-10 xs:gap-6 p-4 bg-black"
+              className="w-full border border-[#762fc1] rounded-lg   flex flex-col lg:gap-16 md:gap-16 sm:gap-10 xs:gap-6 p-4 bg-black"
               style={shadowStyle}
             >
-              <div className="flex xs:flex-col sm:flex-row lg:gap-10 md:gap-2 xs:gap-1 justify-between">
+              <div className="flex xs:flex-row sm:flex-row lg:gap-10 md:gap-2 xs:gap-1 justify-between">
                 <button
                   className={` ${
                     stake ? "lg:bg-[#2e2834] md:bg-[#2e2834] sm:border-b-4 xs:border-b-2 border-[#2e2834]" : ""
@@ -96,7 +96,7 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                   type="text"
                   placeholder="0.00"
                   className="bg-[#100d14] border border-[#3e334b]  rounded-lg hover:outline-none text-right placeholder:text-right px-2 py-4 w-full "
-                  onChange={handleOnChange}
+                  onChange={handleOnChange}                                                                                                                 
                   onFocus={handleInputFocus}
                   onBlur={handleInputBlur}
                   style={shadowStyle1}
@@ -107,19 +107,19 @@ const Stalking: React.FC<openSideBarPropValue> = ({ openSideBar }) => {
                 </div>
                 <p className="self-end font-extralight text-sm">
                   {stake ? "Wallet" : "Staked"} : 0.00 LOAN
-                </p>
+                </p>                                                                                                                                                                                         
               </div>
-              <div className="flex xs:flex-col sm:flex-row flex-row lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1 w-full justify-between items-center">
-                <button className="rounded-md max-w-[25%]  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+              <div className="flex xs:flex-row sm:flex-row flex-row lg:gap-6 md:gap-3 sm:gap-1 xs:gap-1  justify-between items-center ">                                                                                                                                                                                                                                                                          
+                <button className="rounded-md max-w-[25%] flex  justify-center  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   25%
                 </button>
-                <button className="rounded-md max-w-[25%]   hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md max-w-[25%]  flex  justify-center  hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   50%
                 </button>
-                <button className="rounded-md max-w-[25%]   hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md max-w-[25%] flex  justify-center   hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   75%
                 </button>
-                <button className="rounded-md max-w-[25%] hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 px-10">
+                <button className="rounded-md max-w-[25%] hover:bg-[#3e334b] bg-[#2e2834] text-[#727379] hover:text-white font-extralight text-sm py-1 lg:px-9 md:px-8 sm:px-7 xs:px-5">
                   100%
                 </button>
               </div>
