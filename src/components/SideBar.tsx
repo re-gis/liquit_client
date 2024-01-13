@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.6d8c97d9.png";
@@ -11,27 +12,37 @@ import stak from "../assets/stakpng.png";
 import stap from "../assets/stapng.png";
 import token from "../assets/tokens.png";
 import bor from "../assets/bopng.png";
+import { useTheme } from "../providers/ThemeContext";
 
-const SideBar: React.FC<openSideBarProp> = ({ openSideBar ,setOpenSideBar }) => {
+const SideBar: React.FC<openSideBarProp> = ({
+  openSideBar,
+  setOpenSideBar,
+}) => {
   const setBarToClose = () => {
-setOpenSideBar(prev=>!prev)
-  }
+    setOpenSideBar((prev) => !prev);
+  };
+
+  const {theme, toggleTheme} = useTheme()
 
 
   return (
     <>
-      {!openSideBar? (
+      {!openSideBar ? (
         <div
-          className={` xs:hidden sm:hidden md:hidden lg:flex flex-col gap-12 bg-black  p-5  `}
+          className={
+            theme === "light"
+              ? "xs:hidden sm:hidden md:hidden lg:flex flex-col gap-12 bg-black  p-5"
+              : "xs:hidden sm:hidden md:hidden lg:flex flex-col gap-12 bg-white  p-5  "
+          }
         >
           <div className="w-[100%]">
             <img src={logo} className="h-[35px]" alt="" />
           </div>
           <div>
             <ul className="flex flex-col gap-9">
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/"}
                 >
                   <img
@@ -41,9 +52,9 @@ setOpenSideBar(prev=>!prev)
                   Start Here
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/borrow"}
                 >
                   <img
@@ -53,9 +64,9 @@ setOpenSideBar(prev=>!prev)
                   Borrow USDL
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/stability"}
                 >
                   <img
@@ -65,9 +76,9 @@ setOpenSideBar(prev=>!prev)
                   Stability Pool
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/staking"}
                 >
                   <img
@@ -77,9 +88,9 @@ setOpenSideBar(prev=>!prev)
                   Staking Pool
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/lp"}
                 >
                   <img
@@ -89,9 +100,9 @@ setOpenSideBar(prev=>!prev)
                   LP Rewards
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/redemptions"}
                 >
                   <img
@@ -101,9 +112,9 @@ setOpenSideBar(prev=>!prev)
                   Redemptions
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/liquidations"}
                 >
                   <img
@@ -113,9 +124,9 @@ setOpenSideBar(prev=>!prev)
                   LIquidations
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/analytics"}
                 >
                   <img
@@ -125,9 +136,9 @@ setOpenSideBar(prev=>!prev)
                   Analytics
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/knowledge"}
                 >
                   <img
@@ -137,9 +148,9 @@ setOpenSideBar(prev=>!prev)
                   Knowledge Base
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <Link
-                  className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                  className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                   to={"/tokens"}
                 >
                   <img
@@ -154,7 +165,7 @@ setOpenSideBar(prev=>!prev)
           <div className="flex flex-col gap-2 ">
             <h2>Social Media</h2>
             <ul className="flex items-center gap-7">
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <svg
                   className="w-[15px] h-[15px]"
                   stroke="currentColor"
@@ -168,7 +179,7 @@ setOpenSideBar(prev=>!prev)
                   <path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path>
                 </svg>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <svg
                   className="w-[15px] h-[15px]"
                   stroke="currentColor"
@@ -183,7 +194,7 @@ setOpenSideBar(prev=>!prev)
                 </svg>
               </li>
 
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <svg
                   className="w-[15px] h-[15px]"
                   stroke="currentColor"
@@ -198,7 +209,7 @@ setOpenSideBar(prev=>!prev)
                 </svg>
               </li>
 
-              <li className="cursor-pointer">
+              <li className="cursor-pointer text-[#7e708e] font-extrabold">
                 <svg
                   className="w-[15px] h-[15px]"
                   stroke="currentColor"
@@ -236,7 +247,7 @@ setOpenSideBar(prev=>!prev)
               <ul className="flex flex-col gap-9">
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/"}
                   >
                     <img
@@ -248,7 +259,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/borrow"}
                   >
                     <img
@@ -260,7 +271,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/stability"}
                   >
                     <img
@@ -272,7 +283,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/staking"}
                   >
                     <img
@@ -284,7 +295,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/lp"}
                   >
                     <img
@@ -296,7 +307,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/redemptions"}
                   >
                     <img
@@ -308,7 +319,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/liquidations"}
                   >
                     <img
@@ -320,7 +331,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/analytics"}
                   >
                     <img
@@ -332,7 +343,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/knowledge"}
                   >
                     <img
@@ -344,7 +355,7 @@ setOpenSideBar(prev=>!prev)
                 </li>
                 <li className="cursor-pointer" onClick={setBarToClose}>
                   <Link
-                    className="flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]"
+                    className={theme === "light" ? "flex items-center w-[100%] gap-4 hover:text-white text-sm font-[600]" : "flex items-center w-[100%] gap-4 hover:text-black font-extrabold text-sm"}
                     to={"/tokens"}
                   >
                     <img

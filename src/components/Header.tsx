@@ -6,12 +6,21 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import React from "react";
 import { LightMode } from "@mui/icons-material";
+import { useTheme } from "../providers/ThemeContext";
 const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+
+  const {theme, toggleTheme} = useTheme()
+
+   const handleLightClick = () => {
+     toggleTheme();
+   };
+
+   const isDarkMode = theme === "dark";
 
   const shadowStyle = {
     boxShadow: "0px 0px 12px 0px rgba(118, 47, 193, 0.7)",
@@ -27,9 +36,6 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
     setOpenSideBar((prev) => !prev);
   };
 
-  const handleLightClick = () => {
-    setIsClicked(!isClicked);
-  };
 
   return (
     <div className="flex xs:flex-row sm:flex-row  items-center sm:justify-between  xs:justify-around  py-2 sm:p-5 lg:p-5 md:p-5 xs:p-3 relative xs:">
@@ -47,15 +53,35 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
         <div className="xs:hidden sm:block md:block lg:block">
           <p>
             {" "}
-            <span className="text-white sm:text-xs">TCR</span>{" "}
-            <span className=" lg:text-sm md:text-sm sm:text-xs">
+            <span
+              className={
+                theme === "light"
+                  ? "text-white sm:text-xs"
+                  : "text-black sm:text-xs"
+              }
+            >
+              TCR
+            </span>{" "}
+            <span
+              className={
+                theme === "light"
+                  ? " lg:text-sm md:text-sm sm:text-xs"
+                  : " lg:text-sm md:text-sm sm:text-xs text-[#818789]"
+              }
+            >
               (Normal Mode)
             </span>
           </p>
           <div>
-            <span className="text-white">22.66% </span>
+            <span className={theme === "light" ? "text-white" : "text-black"}>
+              22.66%{" "}
+            </span>
             <span
-              className="hover:cursor-pointer"
+              className={
+                theme === "light"
+                  ? "hover:cursor-pointer"
+                  : "hover:cursor-pointer text-[#818789]"
+              }
               onMouseOver={handleHovered}
               onMouseOut={handleUnHovered}
             >
@@ -114,7 +140,11 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
       <div className="flex xs:flex-row xs:w-[100%] sm:w-[auto] sm:flex-row xs:px-5 flex-row gap-8 xs:gap-1 sm:gap-3 xs:justify-between">
         <Link
           to="#"
-          className=" rounded-md bg-[#762fc1] text-white sm:text-xs xs:text-xs  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
+          className={
+            theme === "light"
+              ? " rounded-md bg-[#762fc1] text-white sm:text-[16px] xs:text-xs  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
+              : " rounded-md bg-[#7b6aac] text-white sm:text-[16px] xs:text-xs  lg:p-2 md:p-2 sm:p-1 xs:p-1 hover:bg-[#3e334b] flex justify-center items-center "
+          }
         >
           <span>
             <AccountBalanceWalletOutlinedIcon />
@@ -132,16 +162,16 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
         </Link>
         <button
           className={
-            isClicked
-              ? "bg-[#3e334b]  xs:w-[auto] rounded-3xl flex items-center justify-center p-2"
-              : "bg-black  xs:w-[auto] rounded-3xl flex items-center justify-center p-2 hover:bg-[#3e334b]"
+            isDarkMode
+              ? "bg-[#818789] xs:w-[auto] rounded-3xl flex items-center justify-center p-2"
+              : "bg-black xs:w-[auto] rounded-3xl flex items-center justify-center p-2 hover:bg-[#3e334b]"
           }
           onClick={handleLightClick}
         >
-          {!isClicked ? (
+          {!isDarkMode ? (
             <DarkModeIcon
               sx={{
-                color: "#762fc1 ",
+                color: "#762fc1",
                 ":hover": { color: "white" },
                 fontSize: "32px",
               }}

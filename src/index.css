@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   --theme-ui-colors-primary: #762fc1;
   --theme-ui-colors-secondary: #3e334b;
@@ -55,12 +56,34 @@ body {
   color: var(--theme-ui-colors-text, #7E708E);
   background-color: var(--theme-ui-colors-background, #16121A);
 
-  font-family: Roboto  sans-serif;
+  font-family: Roboto sans-serif;
   line-height: 1.35;
   font-weight: 600;
   font-size: 16px;
 }
 
-.main{
-  background: linear-gradient(120deg, rgb(33, 27, 49) 0%, rgb(10, 12, 18) 45%, rgb(10, 12, 18) 65%, rgb(28, 31, 19) 100%);
+
+
+
+:root {
+  --primary-bg-light: linear-gradient(120deg, rgb(33, 27, 49) 0%, rgb(10, 12, 18) 45%, rgb(10, 12, 18) 65%, rgb(28, 31, 19) 100%);
+  --primary-bg-dark: linear-gradient(110deg, rgba(195, 208, 222, 0.75) 0%, rgba(245, 242, 238, 0.35) 35%, rgba(245, 242, 238, 0.35) 70%, rgba(242, 241, 222, 0.35) 100%), linear-gradient(rgb(195, 208, 222) 0%, rgb(245, 242, 238) 25%, rgb(242, 241, 222) 100%);
+  --primary-text-light: #ffffff;
+  --primary-text-dark: #333333;
+}
+
+[data-theme='light'] {
+  --primary-bg: var(--primary-bg-light);
+  --primary-text: var(--primary-text-light);
+}
+
+[data-theme='dark'] {
+  --primary-bg: var(--primary-bg-dark);
+  --primary-text: var(--primary-text-dark);
+}
+
+.main {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  /* Add other styles as needed */
 }

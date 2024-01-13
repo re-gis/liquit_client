@@ -6,6 +6,7 @@ import Stalking from "./Stalking/Stalking";
 import { useState } from "react";
 import Footer from "./components/Footer";
 import NotFoundPage from "./NotFoundScreen/NotFoundPage";
+import React from "react";
 
 const App: React.FC = () => {
   const [openSideBar, setOpenSidebar] = useState(false);
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className="flex main">
-        <div className="lg:w-[15%]  lg:flex">
+        <div className="lg:w-[15%] lg:flex">
           <SideBar openSideBar={openSideBar} setOpenSideBar={setOpenSidebar}/>
         </div>
         <div className="w-full">
