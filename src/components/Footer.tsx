@@ -1,4 +1,5 @@
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
+import React from "react";
 import { useState } from "react";
 
 const Footer: React.FC = () => {

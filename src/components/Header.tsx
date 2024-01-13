@@ -1,3 +1,4 @@
+/* eslint-disable */
 import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import PlayCircleFilledOutlinedIcon from "@mui/icons-material/PlayCircleFilledOutlined";
@@ -6,8 +7,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import React from "react";
+import { LightMode } from "@mui/icons-material";
 const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const shadowStyle = {
     boxShadow: "0px 0px 12px 0px rgba(118, 47, 193, 0.7)",
@@ -21,6 +25,10 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
 
   const handleModel = () => {
     setOpenSideBar((prev) => !prev);
+  };
+
+  const handleLightClick = () => {
+    setIsClicked(!isClicked);
   };
 
   return (
@@ -122,14 +130,31 @@ const Header: React.FC<openSideBarProp> = ({ openSideBar, setOpenSideBar }) => {
             <PlayCircleFilledOutlinedIcon />
           </span>
         </Link>
-        <button className="bg-black  xs:w-[auto] rounded-3xl flex items-center justify-center p-2 hover:bg-[#3e334b]">
-          <DarkModeIcon
-            sx={{
-              color: "#762fc1 ",
-              ":hover": { color: "white" },
-              fontSize: "32px",
-            }}
-          />
+        <button
+          className={
+            isClicked
+              ? "bg-[#3e334b]  xs:w-[auto] rounded-3xl flex items-center justify-center p-2"
+              : "bg-black  xs:w-[auto] rounded-3xl flex items-center justify-center p-2 hover:bg-[#3e334b]"
+          }
+          onClick={handleLightClick}
+        >
+          {!isClicked ? (
+            <DarkModeIcon
+              sx={{
+                color: "#762fc1 ",
+                ":hover": { color: "white" },
+                fontSize: "32px",
+              }}
+            />
+          ) : (
+            <LightMode
+              sx={{
+                color: "white",
+                ":hover": { color: "white" },
+                fontSize: "32px",
+              }}
+            />
+          )}
         </button>
         <button
           onClick={handleModel}
